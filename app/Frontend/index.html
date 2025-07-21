@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nawaf Alshehri - Cloud & DevOps Engineer (GCP)</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon/gcp-favicon.png" type="image/png">
+
+    <!-- GCP Inspired Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #1E1B15, #0B0C10);
+            font-family: 'Roboto', sans-serif;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 80px auto 20px auto;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .rectangle {
+            background: #3C4043;
+            border-radius: 25px;
+            padding: 40px 50px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .line {
+            border-bottom: 2px solid #34A853;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            color: #34A853;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .left h1,
+        .header .left h3 {
+            margin: 0;
+        }
+
+        .header .right a {
+            color: #f5f5f5;
+            text-decoration: none;
+        }
+
+        .project a {
+            color: #4285F4;
+            text-decoration: none;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin: 40px 0 80px 0;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            font-size: 32px;
+            width: 60px;
+            height: 60px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #202124;
+            color: #f5f5f5;
+            box-shadow: 0 0 12px rgba(66, 133, 244, 0.4);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            box-shadow: 0 0 20px rgba(66, 133, 244, 0.8);
+            transform: scale(1.1);
+            background-color: #34A853;
+        }
+
+       .counter{
+            font-size:2.5em;
+            font-weight:bold;
+            color:#F9AB00;
+            text-align:center;
+            margin-top:20px;
+            }
+
+            /* ---- Visitor chip -------------------------------------------- */
+            .visitor-chip{
+            display:inline-flex;
+            align-items:center;
+            font-size:0.9rem;
+            font-weight:600;
+            padding:4px 10px;
+            border-radius:999px;          /* pill */
+            background:#202124;
+            color:#F9AB00;
+            box-shadow:0 0 8px rgba(249,171,0,0.4);
+            transition:box-shadow .25s, transform .25s;
+            }
+            .visitor-chip:hover{
+            box-shadow:0 0 14px rgba(249,171,0,0.7);
+            transform:translateY(-1px);
+            }
+
+            /* ---------- Header spacing & hover ---------------------------- */
+            .header .right{
+            display:flex;
+            align-items:center;   /* vertical centring */
+            gap:18px;             /* EVEN spacing */
+            }
+
+            .header-icon{
+            color:#f5f5f5;
+            text-decoration:none;
+            transition:color .2s;
+            }
+            .header-icon:hover{
+            color:#F9AB00;
+            }
+
+            /* hide the old big-number block (already commented-out in HTML) */
+            .rec{ display:none; }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="rec">
+        <div class="counter">
+            <p id="count">0</p>
+            <small>Visits</small>
+        </div>
+    </div> -->
+
+    <section class="container">
+        <div class="rectangle">
+            <div class="header">
+                <div class="left">
+                    <h1>Nawaf Alshehri</h1>
+                    <h3>Cloud & DevOps Engineer (GCP Edition)</h3>
+                </div>
+                <div class="right">
+                    <a href="https://www.linkedin.com/in/alshehri-nawaf/" target="_blank" class="header-icon">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+
+                    <a href="https://github.com/nwafdes" target="_blank" class="header-icon">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+
+                    <span id="visitor-chip" class="visitor-chip" aria-label="0 visits">
+                        <i class="fa fa-eye" aria-hidden="true" style="margin-right:4px;"></i>
+                        <span id="count">0</span>
+                    </span>
+                    </div>
+            </div>
+
+            <h3 class="line">Cloud Transformation with Google</h3>
+            <p>
+                Embracing the GCP ecosystem, I've transitioned my cloud engineering journey to include Google Cloud Platform to further expand my multi-cloud fluency. Combining GCP’s powerful managed services with my DevOps background, I’ve reimagined this portfolio using Cloud Storage, Cloud Functions, Cloud Run, and Cloud Build — unified under secure, scalable infrastructure-as-code principles.
+            </p>
+
+            <h3 class="line">GCP-Powered Projects</h3>
+
+            <div class="project">
+                <h4>Cloud Resume Challenge (GCP Edition)</h4>
+                <p>
+                    Rebuilt this resume website using GCP’s modern serverless stack and CI/CD workflows for a complete multi-cloud portfolio.
+                    <a href="https://github.com/nwafdes/gcp-cloud-resume" target="_blank">[View on GitHub]</a>
+                </p>
+                <ul>
+                    <li><strong>Infrastructure as Code (IaC):</strong> Provisioned Cloud Storage, HTTPS Load Balancer, and Cloud Functions using Terraform.</li>
+                    <li><strong>Serverless & CI/CD:</strong> Integrated Cloud Build and GitHub Actions to automate testing and deployment.</li>
+                    <li><strong>Security:</strong> Used Workload Identity Federation to authenticate GitHub without secrets or keys.</li>
+                    <li><strong>Observability:</strong> Enabled detailed logging and metrics with Cloud Logging and Cloud Monitoring.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h4>AI Knowledge Agent (Multi-Cloud)</h4>
+                <p>
+                    Seamlessly deployable across AWS and GCP, this semantic search agent performs intelligent queries over markdown knowledge bases.
+                </p>
+                <ul>
+                    <li><strong>LangChain & FAISS:</strong> Cross-platform vector database built with local FAISS indices.</li>
+                    <li><strong>LLM Runtime:</strong> Integrated with Vertex AI or Groq API, depending on cloud environment.</li>
+                </ul>
+            </div>
+
+            <h3 class="line">Core Identity</h3>
+            <p>
+                Desert-born, cloud-native. I bridge the vastness of resilient tradition with the flexibility of modern cloud. From Riyadh’s roots to globally scalable infrastructure, I architect secure, efficient, and human-centered systems.
+            </p>
+
+            <h3 class="line">Technical Stack</h3>
+            <ul>
+                <li><strong>Cloud:</strong> GCP (Cloud Run, Cloud Build, Cloud Storage, IAM, Load Balancer)</li>
+                <li><strong>IaC:</strong> Terraform (GCP modules)</li>
+                <li><strong>CI/CD:</strong> Cloud Build, GitHub Actions</li>
+                <li><strong>AI/ML:</strong> Vertex AI, LangChain, Hugging Face</li>
+                <li><strong>Scripting:</strong> Python, Bash</li>
+                <li><strong>Security:</strong> Workload Identity Federation, IAM, DLP API</li>
+                <li><strong>Networking:</strong> VPCs, DNS, HTTP Load Balancing</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="social-icons">
+        <a href="https://x.com/Nwaf_IT" target="_blank" class="fa-brands fa-twitter"></a>
+        <a href="https://www.youtube.com/@NAWAF-SUDO" target="_blank" class="fa-brands fa-youtube"></a>
+    </div>
+
+    <script type="text/javascript" src="interactions.js"></script>
+</body>
+</html>

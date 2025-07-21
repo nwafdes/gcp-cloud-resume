@@ -1,0 +1,7 @@
+__py*
+.venv
+.env
+__init*
+.pytest*
+.gcloud*
+tempCodeRunn*

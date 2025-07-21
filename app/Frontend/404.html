@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 – Page Not Found</title>
+
+    <!-- Google Font + Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Main site styles (includes the animated desert) -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Page-specific tweaks -->
+    <style>
+        /* Centre the error message */
+        .error-wrapper{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            min-height:100vh;
+            text-align:center;
+            position:relative;
+            z-index:1;   /* above dunes */
+        }
+        /* Rainbow-gradient 404 */
+        .error-code{
+            font-size:8rem;
+            font-weight:700;
+            margin:0;
+            background:linear-gradient(90deg,#4285F4,#34A853,#F9AB00,#EA4335);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            animation:hueShift 8s linear infinite;
+        }
+        @keyframes hueShift{
+            from{filter:hue-rotate(0deg);}
+            to  {filter:hue-rotate(360deg);}
+        }
+        .error-msg{
+            font-size:1.5rem;
+            margin:0 0 24px 0;
+            color:#111;
+        }
+        .home-btn{
+            padding:12px 28px;
+            font-size:1rem;
+            font-weight:600;
+            border:none;
+            border-radius:8px;
+            background:#4285F4;
+            color:#fff;
+            text-decoration:none;
+            transition:background .25s;
+        }
+        .home-btn:hover{ background:#3367D6; }
+    </style>
+</head>
+
+<body>
+    <!-- Animated desert background -->
+    <div class="desert-bg"></div>
+
+    <!-- 404 message -->
+    <div class="error-wrapper">
+        <p class="error-code">404</p>
+        <p class="error-msg">Looks like this page blew away in a sandstorm.</p>
+        <a href="/" class="home-btn">
+            <i class="fa fa-home" style="margin-right:6px;"></i>Back to Oasis
+        </a>
+    </div>
+</body>
+</html>
