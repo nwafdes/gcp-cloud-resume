@@ -1,12 +1,23 @@
+variable "project_id" {
+  type = string
+}
+
 variable "database_name" {
-  default = "sahaba-gcp-db"
+  type = string
 }
 
 variable "collection_name" {
-  default = "sahaba-gcp-collection"
+  type = string
 }
 
-
 variable "document" {
-  default = "sahaba-gcp-document"
+  type = string
+}
+
+variable "function_name" {
+  type = string
+}
+
+variable "field_name" {
+  type = string
 }

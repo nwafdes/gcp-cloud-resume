@@ -1,14 +1,18 @@
+
 resource "google_firestore_database" "database" {
-  project                           = "The-cloud-Resume-Challenge"
+  project                           = var.project_id
   name                              = var.database_name
   location_id                       = "me-central1"
   type                              = "FIRESTORE_NATIVE"
 }
 
+
 resource "google_firestore_document" "mydoc" {
-  project     = google_project.project.project_id
-  database    = google_firestore_database.database.name
-  collection  = "somenewcollection"
-  document_id = "my-doc-id"
-  fields      = "{\"something\":{\"mapValue\":{\"fields\":{\"akey\":{\"stringValue\":\"avalue\"}}}}}"
+  project     = var.project_id
+  database    = var.database_name
+  collection  = var.collection_name
+  document_id = var.document
+  fields      = "{\"${var.field_name}\" : {\"integerValue\":0}}"
+  depends_on = [ google_firestore_database.database ]
 }
+

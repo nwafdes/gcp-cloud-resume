@@ -1,4 +1,4 @@
-const API_URL = "https://me-central1-fiery-protocol-466303-p6.cloudfunctions.net/sahaba-gcp-function";
+const API_URL = "https://me-central1-fiery-protocol-466303-p6.cloudfunctions.net/sahaba-gcp-funciton";
 const API_KEY = "…"; // consider moving server-side
 const COOKIE_NAME = "VID";
 const countEl = document.getElementById("count");
@@ -6,7 +6,7 @@ const countEl = document.getElementById("count");
 /* ---------- Utilities ---------- */
 const randId = () => "_" + Math.random().toString(36).slice(2, 11);
 
-const setCookie = (name, value, days = 30) => {
+const setCookie = (name, value, days=30) => {
   const d = new Date(Date.now() + days * 864e5);
   document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)};expires=${d.toUTCString()};path=/`;
 };

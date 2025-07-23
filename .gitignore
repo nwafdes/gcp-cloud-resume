@@ -5,3 +5,5 @@ __init*
 .pytest*
 .gcloud*
 tempCodeRunn*
+.terraform.lock.hcl
+.terraform
