@@ -7,3 +7,4 @@ __init*
 tempCodeRunn*
 .terraform.lock.hcl
 .terraform
+.vscode

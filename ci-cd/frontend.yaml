@@ -1,0 +1,14 @@
+steps:
+# 1. Upload static files to the bucket
+- id: upload-static
+  name: gcr.io/google.com/cloudsdktool/cloud-sdk     # includes gsutil + gcloud
+  dir: app/frontend
+  entrypoint: gsutil
+  args: ["-m", "rsync", "-r", "-d", ".", "gs://nawafdes-cloud-resume-challenge/"]
+
+# 2. Invalidate Cloud CDN cache on the URL map
+- id: cache-invalidation
+  name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  script: |
+    URL_MAP=$(gcloud compute url-maps list --format="value(name)" --limit=1)
+    gcloud compute url-maps invalidate-cdn-cache "$URL_MAP" --path "/*" --global

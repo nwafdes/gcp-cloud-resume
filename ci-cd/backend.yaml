@@ -1,0 +1,15 @@
+steps:
+# 1. Run unit tests
+- id: unit-tests
+  name: python:3.11
+  entrypoint: bash
+  args: ["-c", "pip install -q pytest && pytest"]
+
+# 2. Terraform deploy
+- id: terraform-deploy
+  name: gcr.io/cloud-builders/terraform
+  dir: infra/Infrastructure-module
+  script: |
+    terraform init -input=false
+    terraform plan -input=false
+    terraform apply -auto-approve -input=false

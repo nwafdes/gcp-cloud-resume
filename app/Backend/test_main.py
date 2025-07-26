@@ -23,7 +23,7 @@ def test_get_request(mock_firestore):
 def test_post_request(mock_firestore):
     # Mock Firestore document get and update
     mock_doc = MagicMock()
-    mock_doc.get.return_value.to_dict.return_value = {"visitor-number": 42}
+    mock_doc.get.return_value.to_dict.return_value = {"Vistor_Counter": 42} # the field name of the database
     mock_doc.update.return_value = True
     mock_firestore.client.return_value.collection.return_value.document.return_value = mock_doc
 
