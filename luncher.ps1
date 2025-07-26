@@ -14,4 +14,8 @@ $new_url = Read-Host "Paste the new URL"
 Write-Host "Old Url >> $old_url"
 Write-Host "New Url >> $new_url"
 
-(Get-Content -Raw -Path "app\Frontend\interactions.js").Replace($old_url, "'$new_url'") 
+# (Get-Content -Raw -Path "app\Frontend\interactions.js").Replace($old_url, "'$new_url'")
+
+Get-Content .\app\Frontend\interactions.js -Raw | ForEach-Object{
+    $_.Replace($old_url, "'$new_url'")
+ } | Set-Content ./app/Frontend/interactions.js -Force

@@ -21,3 +21,7 @@ variable "function_name" {
 variable "field_name" {
   type = string
 }
+
+variable "bucket_name" {
+  type = string
+}

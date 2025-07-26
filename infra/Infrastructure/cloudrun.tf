@@ -1,7 +1,7 @@
 # declare the current bucket
-locals {
-  function_bucket = "sahaba-gcp"
-}
+# locals {
+#   function_bucket = "sahaba-gcp"
+# }
 
 # archive the python project
 data "archive_file" "function_zip" {
@@ -15,7 +15,7 @@ data "archive_file" "function_zip" {
 # upload the object into the bucket (required for cloudrun)
 resource "google_storage_bucket_object" "archive" {
   name   = "backend-function.zip"
-  bucket = local.function_bucket
+  bucket = var.bucket_name
   source = data.archive_file.function_zip.output_path
   content_type = "application/zip"
 }
@@ -33,7 +33,7 @@ resource "google_cloudfunctions2_function" "function" {
     entry_point    = "hello_http"
     source {
       storage_source {
-        bucket = local.function_bucket
+        bucket = var.bucket_name
         object = google_storage_bucket_object.archive.name
       }
     }
@@ -60,6 +60,7 @@ output "trigger_url"{
 
 # allow unauthenticated invokations
 resource "google_cloud_run_service_iam_binding" "invoker" {
+  depends_on = [ google_cloudfunctions2_function.function ]
   # name of the function
   service = var.function_name
   # name of the project and location

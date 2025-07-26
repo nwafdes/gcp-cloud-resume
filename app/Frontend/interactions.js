@@ -1,4 +1,4 @@
-const API_URL = "https://me-central1-fiery-protocol-466303-p6.cloudfunctions.net/sahaba-gcp-funciton";
+const API_URL = "https://me-central1-sahaba-466907.cloudfunctions.net/sahaba-gcp-funciton";
 const API_KEY = "…"; // consider moving server-side
 const COOKIE_NAME = "VID";
 const countEl = document.getElementById("count");
