@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nawaf Alshehri • Cloud & DevOps (GCP)</title>
+  <link rel="icon" href="/favicon/gcp-favicon.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─────────── RESET + BASE ─────────── */
+    :root {
+      --bg-1: #012933;
+      --bg-2: #01434e;
+      --fg: #eef5f6;
+      --accent: #00c4ff;
+      --badge: #11303b;
+    }
+    html,body {margin:0;padding:0;font-family:'Roboto',sans-serif;color:var(--fg);}
+    body {
+      background:linear-gradient(135deg,var(--bg-1),var(--bg-2) 70%);
+      overflow-x:hidden;
+    }
+    h1,h2,h3 {margin:0;font-weight:700}
+    a{color:var(--accent);text-decoration:none}
+    /* ─────────── HERO ─────────── */
+    .hero{
+      text-align:center;padding:6rem 1rem 4rem;
+      display:flex;flex-direction:column;align-items:center;gap:1rem;
+    }
+    .hero img{width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 0 15px rgba(0,196,255,.4)}
+    .hero h1{font-size:2.4rem}
+    .hero p{max-width:640px;font-size:1.1rem;margin:auto;line-height:1.6}
+    /* ─────────── SVG DIVIDER ─────────── */
+    .divider{display:block;height:60px;background:url('data:image/svg+xml,\
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox=\"0 0 1440 320\" preserveAspectRatio=\"none\">\
+      <path fill=\"%23012933\" d=\"M0,96L60,96C120,96,240,96,360,90.7C480,85,600,75,720,101.3C840,128,960,192,1080,224C1200,256,1320,256,1380,256L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z\"/></svg>') no-repeat center/cover;}
+    /* ─────────── CONTENT SECTIONS ─────────── */
+    section{max-width:920px;margin:3rem auto;padding:0 1rem}
+    .line{border-left:4px solid var(--accent);padding-left:14px;margin-bottom:.8rem}
+    ul{padding-left:1.2rem}
+    /* ─────────── BADGES ─────────── */
+    .badge{display:inline-block;background:var(--badge);color:var(--accent);padding:4px 10px;border-radius:999px;font-size:.8rem;margin:2px 6px}
+    /* ─────────── TIMELINE ─────────── */
+    .timeline{border-left:3px solid var(--accent);margin-left:20px;padding-left:25px}
+    .timeline-item{position:relative;margin-bottom:1.8rem}
+    .timeline-item::before{content:"";position:absolute;left:-17px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+    /* ─────────── SOCIAL + FOOTER ─────────── */
+    .social{display:flex;justify-content:center;gap:22px;margin:3rem 0}
+    .social a{font-size:1.8rem;color:var(--fg);transition:transform .25s}
+    .social a:hover{transform:scale(1.25);color:var(--accent)}
+    footer{font-size:.8rem;text-align:center;margin-bottom:2rem;color:#7ba8b3}
+    /* ─────────── DARK-MODE TOGGLE (optional) ─────────── */
+    .toggle{position:fixed;bottom:20px;right:20px;background:var(--accent);border:0;border-radius:50%;width:46px;height:46px;color:#012933;font-size:1.2rem;cursor:pointer;box-shadow:0 0 8px rgba(0,196,255,.5)}
+  </style>
+</head>
+<body>
+  <button class="toggle" onclick="toggleDark()"><i class="fa fa-moon"></i></button>
+
+  <!-- ─────────── HERO ─────────── -->
+  <header class="hero">
+    <img src="https://via.placeholder.com/120" alt="Nawaf photo" />
+    <h1>Nawaf Alshehri</h1>
+    <p>Cloud &amp; DevOps Engineer passionate about building scalable solutions on Google Cloud Platform.</p>
+    <!-- live counter badge -->
+    <span id="visitor-chip" class="visitor-chip" aria-label="0 visits">
+      <i class="fa fa-eye" aria-hidden="true" style="margin-right:4px;"></i>
+      <span id="count">0</span>
+    </span>
+  </header>
+
+  <!-- decorative divider -->
+  <div class="divider"></div>
+
+  <!-- ─────────── PROJECTS ─────────── -->
+  <section>
+    <h2 class="line">Featured Projects</h2>
+    <ul>
+      <li><strong>Cloud Resume Challenge (GCP):</strong> End-to-end serverless resume using Cloud Run, Firestore, and Cloud Build.</li>
+      <li><strong>AI Knowledge Agent:</strong> Semantic search over markdown using Vertex AI + FAISS.</li>
+    </ul>
+  </section>
+
+  <!-- ─────────── TECH BADGES ─────────── -->
+  <section>
+    <h2 class="line">Stack at a Glance</h2>
+    <div>
+      <span class="badge">GCP</span><span class="badge">Cloud Run</span><span class="badge">Terraform</span>
+      <span class="badge">Python</span><span class="badge">CI/CD</span><span class="badge">Vertex AI</span>
+    </div>
+  </section>
+
+  <!-- ─────────── TIMELINE ─────────── -->
+  <section>
+    <h2 class="line">Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item"><strong>2021 →</strong> Joined DevOps world, automated AWS workloads.</div>
+      <div class="timeline-item"><strong>2023 →</strong> Shifted focus to Google Cloud, earned PCA.</div>
+      <div class="timeline-item"><strong>2025 →</strong> Building multi-cloud AI solutions.</div>
+    </div>
+  </section>
+
+  <!-- ─────────── SOCIAL ─────────── -->
+  <div class="social">
+    <a href="https://x.com/Nwaf_ITsdfsdfsdfsdfsdfsdfsedf"  target="_blank" class="fa-brands fa-twitter"></a>
+    <a href="https://www.youtube.com/@NAWAF-SUDO" target="_blank" class="fa-brands fa-youtube"></a>
+    <a href="https://github.com/nwafdes"          target="_blank" class="fa-brands fa-github"></a>
+    <a href="https://www.linkedin.com/in/alshehri-nawaf/" target="_blank" class="fa-brands fa-linkedin"></a>
+  </div>
+
+  <footer>© 2025 Nawaf Alshehri • Built & deployed on Google Cloud</footer>
+
+  <script src="interactions.js"></script>
+  <script>
+    // quick dark-mode toggle for demo purposes
+    function toggleDark(){
+      const dark = document.body.classList.toggle('dark');
+      document.querySelector('.toggle i').className = dark ? 'fa fa-sun' : 'fa fa-moon';
+    }
+  </script>
+</body>
+</html>
