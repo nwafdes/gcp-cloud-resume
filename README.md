@@ -3,7 +3,7 @@
 > **Desert-born, cloud-native.**  
 > A hands-on portfolio that merges Saudi-inspired design with cutting-edge multi-cloud, security-first engineering.
 
-[![Site screenshot](assets/screenshot.png)](https://nwafdes.github.io) <!-- click to view live site -->
+[![Site screenshot](screenshot.png)](https://nwafdes.github.io) <!-- click to view live site -->
 
 ### 🚀 What’s inside
 
