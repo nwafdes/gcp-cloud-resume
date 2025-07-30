@@ -1,121 +1,309 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Nawaf Alshehri • Cloud & DevOps (GCP)</title>
-  <link rel="icon" href="/favicon/gcp-favicon.png" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ─────────── RESET + BASE ─────────── */
-    :root {
-      --bg-1: #012933;
-      --bg-2: #01434e;
-      --fg: #eef5f6;
-      --accent: #00c4ff;
-      --badge: #11303b;
-    }
-    html,body {margin:0;padding:0;font-family:'Roboto',sans-serif;color:var(--fg);}
-    body {
-      background:linear-gradient(135deg,var(--bg-1),var(--bg-2) 70%);
-      overflow-x:hidden;
-    }
-    h1,h2,h3 {margin:0;font-weight:700}
-    a{color:var(--accent);text-decoration:none}
-    /* ─────────── HERO ─────────── */
-    .hero{
-      text-align:center;padding:6rem 1rem 4rem;
-      display:flex;flex-direction:column;align-items:center;gap:1rem;
-    }
-    .hero img{width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 0 15px rgba(0,196,255,.4)}
-    .hero h1{font-size:2.4rem}
-    .hero p{max-width:640px;font-size:1.1rem;margin:auto;line-height:1.6}
-    /* ─────────── SVG DIVIDER ─────────── */
-    .divider{display:block;height:60px;background:url('data:image/svg+xml,\
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox=\"0 0 1440 320\" preserveAspectRatio=\"none\">\
-      <path fill=\"%23012933\" d=\"M0,96L60,96C120,96,240,96,360,90.7C480,85,600,75,720,101.3C840,128,960,192,1080,224C1200,256,1320,256,1380,256L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z\"/></svg>') no-repeat center/cover;}
-    /* ─────────── CONTENT SECTIONS ─────────── */
-    section{max-width:920px;margin:3rem auto;padding:0 1rem}
-    .line{border-left:4px solid var(--accent);padding-left:14px;margin-bottom:.8rem}
-    ul{padding-left:1.2rem}
-    /* ─────────── BADGES ─────────── */
-    .badge{display:inline-block;background:var(--badge);color:var(--accent);padding:4px 10px;border-radius:999px;font-size:.8rem;margin:2px 6px}
-    /* ─────────── TIMELINE ─────────── */
-    .timeline{border-left:3px solid var(--accent);margin-left:20px;padding-left:25px}
-    .timeline-item{position:relative;margin-bottom:1.8rem}
-    .timeline-item::before{content:"";position:absolute;left:-17px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
-    /* ─────────── SOCIAL + FOOTER ─────────── */
-    .social{display:flex;justify-content:center;gap:22px;margin:3rem 0}
-    .social a{font-size:1.8rem;color:var(--fg);transition:transform .25s}
-    .social a:hover{transform:scale(1.25);color:var(--accent)}
-    footer{font-size:.8rem;text-align:center;margin-bottom:2rem;color:#7ba8b3}
-    /* ─────────── DARK-MODE TOGGLE (optional) ─────────── */
-    .toggle{position:fixed;bottom:20px;right:20px;background:var(--accent);border:0;border-radius:50%;width:46px;height:46px;color:#012933;font-size:1.2rem;cursor:pointer;box-shadow:0 0 8px rgba(0,196,255,.5)}
-  </style>
+    <meta charset="UTF-8">
+    <title>Nawaf Alshehri - Cloud & DevOps Engineer (GCP)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="/favicon/gcp-favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #1E1B15, #0B0C10);
+            font-family: 'Roboto', sans-serif;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 80px auto 20px auto;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .rectangle {
+            background: #3C4043;
+            border-radius: 25px;
+            padding: 40px 50px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .line {
+            border-bottom: 2px solid #34A853;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            color: #34A853;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .left h1,
+        .header .left h3 {
+            margin: 0;
+        }
+
+        .header .right{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .header-icon{
+            color:#f5f5f5;
+            text-decoration:none;
+            transition:color .2s;
+        }
+        .header-icon:hover{
+            color:#F9AB00;
+        }
+
+        .project a {
+            color: #4285F4;
+            text-decoration: none;
+        }
+        .project a:hover { text-decoration: underline; }
+
+        ul { padding-left: 20px; }
+
+        .social-icons {
+            text-align: center;
+            margin: 40px 0 80px 0;
+        }
+        .social-icons a {
+            margin: 0 15px;
+            font-size: 32px;
+            width: 60px;
+            height: 60px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #202124;
+            color: #f5f5f5;
+            box-shadow: 0 0 12px rgba(66, 133, 244, 0.4);
+            transition: all 0.3s ease-in-out;
+        }
+        .social-icons a:hover {
+            box-shadow: 0 0 20px rgba(66, 133, 244, 0.8);
+            transform: scale(1.1);
+            background-color: #34A853;
+        }
+
+        /* ---- Visitor chip -------------------------------------------- */
+        .visitor-chip{
+            display:inline-flex;
+            align-items:center;
+            font-size:0.9rem;
+            font-weight:600;
+            padding:4px 10px;
+            border-radius:999px;
+            background:#202124;
+            color:#F9AB00;
+            box-shadow:0 0 8px rgba(249,171,0,0.4);
+            transition:box-shadow .25s, transform .25s;
+        }
+        .visitor-chip:hover{
+            box-shadow:0 0 14px rgba(249,171,0,0.7);
+            transform:translateY(-1px);
+        }
+
+        /* hide the old big-number block (already commented-out in HTML) */
+        .rec{ display:none; }
+
+        /* ---------- NEW: status badges & progress bar ------------------ */
+        .status-badge{
+            display:inline-block;
+            padding:2px 8px;
+            border-radius:6px;
+            font-size:0.7rem;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:.5px;
+            margin-left:8px;
+        }
+        .status-done{ background:#34A853; color:#fff; }
+        .status-progress{
+            background:#F9AB00; color:#202124;
+            animation:pulse 1.6s infinite;
+        }
+        @keyframes pulse{
+            0%{ box-shadow:0 0 0 0 rgba(249,171,0,.6); }
+            70%{ box-shadow:0 0 0 10px rgba(249,171,0,0); }
+            100%{ box-shadow:0 0 0 0 rgba(249,171,0,0); }
+        }
+
+        .roadmap{
+            margin:25px 0;
+            padding-left:0;
+            list-style:none;
+        }
+        .roadmap li{
+            position:relative;
+            margin:0 0 24px 28px;
+        }
+        .roadmap li::before{
+            content:"";
+            position:absolute;
+            left:-22px;
+            top:6px;
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            background:#34A853;
+        }
+        .roadmap li.in-progress::before{
+            background:#F9AB00;
+        }
+        .roadmap li span{
+            display:block;
+            font-size:.9rem;
+            opacity:.85;
+            margin-top:4px;
+        }
+    </style>
 </head>
 <body>
-  <button class="toggle" onclick="toggleDark()"><i class="fa fa-moon"></i></button>
+    <!-- <div class="rec">
+        <div class="counter">
+            <p id="count">0</p>
+            <small>Visits</small>
+        </div>
+    </div> -->
 
-  <!-- ─────────── HERO ─────────── -->
-  <header class="hero">
-    <img src="https://via.placeholder.com/120" alt="Nawaf photo" />
-    <h1>Nawaf Alshehri</h1>
-    <p>Cloud &amp; DevOps Engineer passionate about building scalable solutions on Google Cloud Platform.</p>
-    <!-- live counter badge -->
-    <span id="visitor-chip" class="visitor-chip" aria-label="0 visits">
-      <i class="fa fa-eye" aria-hidden="true" style="margin-right:4px;"></i>
-      <span id="count">0</span>
-    </span>
-  </header>
+    <section class="container">
+        <div class="rectangle">
+            <div class="header">
+                <div class="left">
+                    <h1>Nawaf Alshehri</h1>
+                    <h3>Cloud & DevOps Engineer (GCP Edition)</h3>
+                </div>
+                <div class="right">
+                    <a href="https://www.linkedin.com/in/alshehri-nawaf/" target="_blank" class="header-icon">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/nwafdes" target="_blank" class="header-icon">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                    <span id="visitor-chip" class="visitor-chip" aria-label="0 visits">
+                        <i class="fa fa-eye" aria-hidden="true" style="margin-right:4px;"></i>
+                        <span id="count">0</span>
+                    </span>
+                </div>
+            </div>
 
-  <!-- decorative divider -->
-  <div class="divider"></div>
+            <h3 class="line">Cloud Transformation with Google</h3>
+            <p>
+                Embracing the GCP ecosystem, I've transitioned my cloud engineering journey to include Google Cloud Platform to further expand my multi-cloud fluency. Combining GCP’s powerful managed services with my DevOps background, I’ve reimagined this portfolio using Cloud Storage, Cloud Functions, Cloud Run, and Cloud Build — unified under secure, scalable infrastructure-as-code principles.
+            </p>
 
-  <!-- ─────────── PROJECTS ─────────── -->
-  <section>
-    <h2 class="line">Featured Projects</h2>
-    <ul>
-      <li><strong>Cloud Resume Challenge (GCP):</strong> End-to-end serverless resume using Cloud Run, Firestore, and Cloud Build.</li>
-      <li><strong>AI Knowledge Agent:</strong> Semantic search over markdown using Vertex AI + FAISS.</li>
-    </ul>
-  </section>
+            <!-- NEW: Plan / Roadmap section -->
+            <h3 class="line">Learning Plan Progress</h3>
+            <ul class="roadmap">
+                <li>
+                    <strong>Project 1 – Terraform Everything + Secure CI/CD</strong>
+                    <span class="status-badge status-done"><i class="fa fa-check"></i> completed</span>
+                    <span>IaC for GCP + security scanners + OIDC auth in GitHub Actions.</span>
+                </li>
+                <li class="in-progress">
+                    <strong>Project 2 – Helm‑Packaged App on GKE</strong>
+                    <span class="status-badge status-progress"><i class="fa fa-spinner fa-spin"></i> in&nbsp;progress</span>
+                    <span>Terraform for GKE, Helm chart for app, HPA, secrets & pipeline release.</span>
+                </li>
+            </ul>
 
-  <!-- ─────────── TECH BADGES ─────────── -->
-  <section>
-    <h2 class="line">Stack at a Glance</h2>
-    <div>
-      <span class="badge">GCP</span><span class="badge">Cloud Run</span><span class="badge">Terraform</span>
-      <span class="badge">Python</span><span class="badge">CI/CD</span><span class="badge">Vertex AI</span>
+            <h3 class="line">GCP-Powered Projects</h3>
+
+            <!-- NEW: Project 1 card -->
+            <div class="project">
+                <h4>
+                    Project 1 – Terraform Everything + Secure CI/CD
+                    <span class="status-badge status-done">Done</span>
+                </h4>
+                <p>
+                    End-to-end Terraform for core GCP resources with a hardened GitHub Actions pipeline (tflint, tfsec, Checkov) and OIDC-based deployment — no long-lived keys.
+                </p>
+                <ul>
+                    <li><strong>IaC:</strong> Cloud Storage bucket, Service Account, Firestore, Cloud Run/Functions, IAM bindings.</li>
+                    <li><strong>CI:</strong> <code>terraform fmt/validate/plan</code> on PRs; scanners block insecure configs.</li>
+                    <li><strong>Auth:</strong> Workload Identity Federation (OIDC) between GitHub Actions & GCP.</li>
+                    <li><strong>Deliverables:</strong> <code>infra/main.tf</code>, <code>variables.tf</code>, <code>.github/workflows/terraform-ci.yml</code>.</li>
+                </ul>
+            </div>
+
+            <!-- Existing project kept -->
+            <div class="project">
+                <h4>Cloud Resume Challenge (GCP Edition)</h4>
+                <p>
+                    Rebuilt this resume website using GCP’s modern serverless stack and CI/CD workflows for a complete multi-cloud portfolio.
+                    <a href="https://github.com/nwafdes/gcp-cloud-resume" target="_blank">[View on GitHub]</a>
+                </p>
+                <ul>
+                    <li><strong>Infrastructure as Code (IaC):</strong> Provisioned Cloud Storage, HTTPS Load Balancer, and Cloud Functions using Terraform.</li>
+                    <li><strong>Serverless & CI/CD:</strong> Integrated Cloud Build and GitHub Actions to automate testing and deployment.</li>
+                    <li><strong>Security:</strong> Used Workload Identity Federation to authenticate GitHub without secrets or keys.</li>
+                    <li><strong>Observability:</strong> Enabled detailed logging and metrics with Cloud Logging and Cloud Monitoring.</li>
+                </ul>
+            </div>
+
+            <!-- NEW: Project 2 preview card -->
+            <div class="project">
+                <h4>
+                    Project 2 – Helm‑Packaged App on GKE
+                    <span class="status-badge status-progress">In&nbsp;Progress</span>
+                </h4>
+                <p>
+                    Splitting responsibilities: Terraform provisions GKE; Helm manages the app lifecycle. The pipeline promotes images and performs <code>helm upgrade --install</code> after infra apply.
+                </p>
+                <ul>
+                    <li><strong>Terraform:</strong> GKE cluster, node pool, networking, IAM.</li>
+                    <li><strong>Helm Chart:</strong> Deployment, Service, ConfigMap, Secret (sealed/external), HPA.</li>
+                    <li><strong>Pipeline:</strong> Separate Terraform and Helm jobs; image tag passed via values file.</li>
+                    <li><strong>Deliverables (planned):</strong> <code>/helm/resume-app/Chart.yaml</code>, <code>values.yaml</code>, GitHub Action job for Helm release.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h4>AI Knowledge Agent (Multi-Cloud)</h4>
+                <p>
+                    Seamlessly deployable across AWS and GCP, this semantic search agent performs intelligent queries over markdown knowledge bases.
+                </p>
+                <ul>
+                    <li><strong>LangChain & FAISS:</strong> Cross-platform vector database built with local FAISS indices.</li>
+                    <li><strong>LLM Runtime:</strong> Integrated with Vertex AI or Groq API, depending on cloud environment.</li>
+                </ul>
+            </div>
+
+            <h3 class="line">Core Identity</h3>
+            <p>
+                Desert-born, cloud-native. I bridge the vastness of resilient tradition with the flexibility of modern cloud. From Riyadh’s roots to globally scalable infrastructure, I architect secure, efficient, and human-centered systems.
+            </p>
+
+            <h3 class="line">Technical Stack</h3>
+            <ul>
+                <li><strong>Cloud:</strong> GCP (Cloud Run, Cloud Build, Cloud Storage, IAM, Load Balancer)</li>
+                <li><strong>IaC:</strong> Terraform (GCP modules)</li>
+                <li><strong>CI/CD:</strong> Cloud Build, GitHub Actions</li>
+                <li><strong>AI/ML:</strong> Vertex AI, LangChain, Hugging Face</li>
+                <li><strong>Scripting:</strong> Python, Bash</li>
+                <li><strong>Security:</strong> Workload Identity Federation, IAM, DLP API</li>
+                <li><strong>Networking:</strong> VPCs, DNS, HTTP Load Balancing</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="social-icons">
+        <a href="https://x.com/Nwaf_IT" target="_blank" class="fa-brands fa-twitter"></a>
+        <a href="https://www.youtube.com/@NAWAF-SUDO" target="_blank" class="fa-brands fa-youtube"></a>
     </div>
-  </section>
 
-  <!-- ─────────── TIMELINE ─────────── -->
-  <section>
-    <h2 class="line">Journey</h2>
-    <div class="timeline">
-      <div class="timeline-item"><strong>2021 →</strong> Joined DevOps world, automated AWS workloads.</div>
-      <div class="timeline-item"><strong>2023 →</strong> Shifted focus to Google Cloud, earned PCA.</div>
-      <div class="timeline-item"><strong>2025 →</strong> Building multi-cloud AI solutions.</div>
-    </div>
-  </section>
-
-  <!-- ─────────── SOCIAL ─────────── -->
-  <div class="social">
-    <a href="https://x.com/Nwaf_ITsdfsdfsdfsdfsdfsdfsedf"  target="_blank" class="fa-brands fa-twitter"></a>
-    <a href="https://www.youtube.com/@NAWAF-SUDO" target="_blank" class="fa-brands fa-youtube"></a>
-    <a href="https://github.com/nwafdes"          target="_blank" class="fa-brands fa-github"></a>
-    <a href="https://www.linkedin.com/in/alshehri-nawaf/" target="_blank" class="fa-brands fa-linkedin"></a>
-  </div>
-
-  <footer>© 2025 Nawaf Alshehri • Built & deployed on Google Cloud</footer>
-
-  <script src="interactions.js"></script>
-  <script>
-    // quick dark-mode toggle for demo purposes
-    function toggleDark(){
-      const dark = document.body.classList.toggle('dark');
-      document.querySelector('.toggle i').className = dark ? 'fa fa-sun' : 'fa fa-moon';
-    }
-  </script>
+    <script type="text/javascript" src="interactions.js"></script>
 </body>
 </html>
